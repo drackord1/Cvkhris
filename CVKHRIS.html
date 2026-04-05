@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Khristian Alarcon | Director Creativo & Diseñador Gráfico</title>
+    <!-- Google Fonts y Font Awesome para un look moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Header / Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .bio {
+            max-width: 550px;
+            color: #cbd5e1;
+            margin-bottom: 1.8rem;
+            line-height: 1.5;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-info a, .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .contact-info a:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            background: #334155;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: 0.2s;
+        }
+
+        .social-icons a:hover {
+            background: #3b82f6;
+            transform: scale(1.05);
+        }
+
+        /* Cards y grillas */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1rem;
+            color: #0f172a;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transition: all 0.25s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+            border-color: #cbd5e1;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #1e293b;
+        }
+
+        .card .meta {
+            font-size: 0.85rem;
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0.5rem 0 0.3rem;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background: #eef2ff;
+            color: #1e40af;
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 0.25rem 0.25rem 0 0;
+        }
+
+        .lang-item {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            margin-right: 0.7rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .ref-item {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .ref-item:first-child {
+            border-top: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 2rem;
+            color: #475569;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 680px) {
+            .hero-text h1 { font-size: 2rem; }
+            .container { padding: 1.2rem; }
+            .hero { padding: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Sección hero / presentación -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Khristian Alarcon</h1>
+                <div class="tagline">Dirección Creativa · Diseñador Gráfico Senior</div>
+                <div class="bio">
+                    Persona honesta, con ánimos de aprender cosas nuevas y una sed de conocimiento constante. 
+                    Siempre busco oportunidades para mejorar y crecer. Mi motivación me impulsa a enfrentar nuevos desafíos 
+                    sin temor a salir de mi zona de confort.
+                </div>
+                <div class="contact-info">
+                    <span><i class="fas fa-envelope"></i> khallarcon@gmail.com</span>
+                    <span><i class="fas fa-phone-alt"></i> 0412-4054151</span>
+                    <span><i class="fab fa-whatsapp"></i> 0412-4054151</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <span style="background:#1e293b;"><i class="fab fa-github"></i> Drackord</span>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <div style="background: #2d3a4e; border-radius: 50%; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                    <i class="fas fa-user-astronaut" style="font-size: 4rem; color:#94a3b8;"></i>
+                </div>
+                <div style="margin-top: 0.8rem; font-weight: 500;">KhrisCarvajal / Drackord</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPERIENCIA LABORAL destacada -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-briefcase" style="margin-right: 0.6rem;"></i> Trayectoria profesional</div>
+        <div class="grid-2col">
+            <!-- PDVSA -->
+            <div class="card">
+                <h3>P.D.V.S.A Occidente</h3>
+                <div class="meta">Pasante · 2017</div>
+                <p>Diseñador de maquetas, estructuras de cableado PLC, Centro de Operaciones Automatizados COA de PDVSA.</p>
+            </div>
+            <!-- METRO Valencia -->
+            <div class="card">
+                <h3>METRO de Valencia</h3>
+                <div class="meta">Pasante · Diseño gráfico & publicidad</div>
+                <p>Analista de sistema, diseño de página web, creación de imágenes, material POP, vallas publicitarias y carnets.</p>
+            </div>
+            <!-- INTERWEBSITE Guacara -->
+            <div class="card">
+                <h3>INTERWEBSITE Guacara</h3>
+                <div class="meta">Diseñador Gráfico</div>
+                <p>Creador de contenido para redes sociales, vallas publicitarias, material POP, fotografía y marketing digital.</p>
+            </div>
+            <!-- CHAVACAL - Diseñador Gráfico Senior -->
+            <div class="card">
+                <h3>CHAVACAL · Diseñador Gráfico Senior</h3>
+                <div class="meta">Desarrollo creativo & Branding</div>
+                <p>Diseños visuales de alta calidad para anuncios impresos, banners digitales, logotipos, folletos, empaques y material POP. 
+                Cumplimiento de identidad de marca para FANFARO, XENOL y MHW.</p>
+            </div>
+            <!-- CHAVACAL - Director creativo y Gerente de área -->
+            <div class="card">
+                <h3>CHAVACAL · Director Creativo & Gerente de área</h3>
+                <div class="meta">Liderazgo creativo</div>
+                <p>Desarrollo de visión creativa y estratégica, supervisión de equipo creativo, generación de conceptos originales, 
+                colaboración con otros departamentos para coherencia de estrategias.</p>
+            </div>
+            <!-- Everest & Groovy’s -->
+            <div class="card">
+                <h3>Everest & Groovy’s · Director Creativo</h3>
+                <div class="meta">Fundador Everest · Director Creativo Groovy’s</div>
+                <p>Identidad de marca, estrategia creativa y comunicación comercial para el negocio de helados (Everest). 
+                En Groovy’s: branding, campañas y contenido enfocado en conectar con el público y fortalecer el crecimiento de la marca.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDUCACIÓN + IDIOMAS en dos columnas -->
+    <div class="grid-2col" style="margin-bottom: 2rem;">
+        <div class="card">
+            <h3><i class="fas fa-graduation-cap"></i> Formación académica</h3>
+            <div style="margin-top: 1rem;">
+                <p><strong>🎓 IUTEPI</strong><br>Técnico Superior Analista de Sistemas (diseño web) · 2017-2020</p>
+                <p style="margin-top: 0.8rem;"><strong>📘 E.T.I Francisco González Guinan</strong><br>Técnico Medio en Electrónica · 2011-2016</p>
+            </div>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-language"></i> Idiomas</h3>
+            <div style="margin-top: 1rem;">
+                <span class="lang-item"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Español (nativo)</span>
+                <span class="lang-item"><i class="fas fa-check-circle"></i> Inglés</span>
+                <span class="lang-item"><i class="fas fa-check-circle"></i> Árabe</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CURSOS Y CERTIFICACIONES -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-certificate"></i> Cursos especializados</div>
+        <div class="grid-2col">
+            <div class="card">
+                <h3>CreativeLive · Creatividad y pensamiento lateral</h3>
+                <p>Fomentar la generación de ideas innovadoras y desarrollar habilidades de pensamiento lateral.</p>
+                <div class="meta">www.creativelive.com</div>
+            </div>
+            <div class="card">
+                <h3>Khan Academy · Dirección de arte y diseño gráfico avanzado</h3>
+                <p>Técnicas avanzadas de diseño gráfico, dirección de arte, estética visual con software y herramientas de diseño, creación de diseños atractivos y efectivos.</p>
+                <div class="meta">www.khanacademy.org</div>
+            </div>
+            <div class="card">
+                <h3>Domestika · Gestión y liderazgo creativo</h3>
+                <p>Desarrollo de habilidades de gestión, liderazgo, resolución de problemas en el contexto creativo, toma de decisiones, comunicación efectiva y resolución de conflictos.</p>
+                <div class="meta">www.domestika.org</div>
+            </div>
+            <div class="card">
+                <h3>Adobe Creative Suite</h3>
+                <p>Herramientas profesionales: Photoshop, Illustrator e InDesign — dominio integral.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HABILIDADES TÉCNICAS Y CONOCIMIENTOS (etiquetas) -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-code"></i> Conocimientos & habilidades</div>
+        <div class="card" style="padding: 1.8rem;">
+            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+                <span class="skill-badge">Mercadeo y comunicación</span>
+                <span class="skill-badge">Diseño gráfico</span>
+                <span class="skill-badge">Adobe Creative Suite</span>
+                <span class="skill-badge">Sketch / Figma</span>
+                <span class="skill-badge">Publicidad y estrategias de marca</span>
+                <span class="skill-badge">Marketing y tendencias</span>
+                <span class="skill-badge">Medios y formatos publicitarios</span>
+                <span class="skill-badge">Creatividad</span>
+                <span class="skill-badge">Pensamiento crítico y analítico</span>
+                <span class="skill-badge">Liderazgo y gestión</span>
+                <span class="skill-badge">Adaptabilidad</span>
+                <span class="skill-badge">Atención al detalle</span>
+                <span class="skill-badge">Pensamiento conceptual</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- REFERENCIAS profesionales -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-address-card"></i> Referencias</div>
+        <div class="grid-2col">
+            <div class="card">
+                <h3>P.D.V.S.A Occidente</h3>
+                <div class="ref-item">
+                    <strong>Antonio Silva</strong><br>
+                    CI: 10.601.297 · Líder Planificación Control de Gestión<br>
+                    <i class="fas fa-phone"></i> 0412-7774004 · <i class="fab fa-whatsapp"></i> 0416-5630073
+                </div>
+            </div>
+            <div class="card">
+                <h3>Mahle GmbH</h3>
+                <div class="ref-item">
+                    <strong>Antonio David Gellida Lavara</strong><br>
+                    Operador de equipos<br>
+                    <i class="fas fa-phone"></i> +34 626-461495<br>
+                    <i class="fas fa-globe"></i> adgellida.com/adgellida_web/
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FRASE O DATO EXTRA: valores + contacto -->
+    <div class="card" style="background: linear-gradient(110deg, #f1f5f9, white); text-align: center; margin-bottom: 1rem;">
+        <p style="font-size: 1rem; font-style: italic; color: #1e293b;">“Siempre estoy buscando oportunidades para mejorar y crecer cada vez más. Mi motivación me impulsa a enfrentar nuevos desafíos.”</p>
+        <div style="margin-top: 0.8rem;">
+            <i class="fas fa-map-marker-alt"></i> Disponible para freelance · Proyectos creativos · Dirección de arte
+        </div>
+    </div>
+
+    <footer>
+        <p>Khristian Alarcon — Dirección Creativa & Diseño Gráfico · Portfolio profesional basado en CV actualizado</p>
+        <p style="margin-top: 0.5rem;"><i class="far fa-envelope"></i> khallarcon@gmail.com · <i class="fab fa-instagram"></i> @Drackord · KhrisCarvajal</p>
+    </footer>
+</div>
+</body>
+</html>
