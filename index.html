@@ -2,11 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Khristian Alarcon | Director Creativo & Diseñador Gráfico</title>
-    <!-- Google Fonts y Font Awesome para un look moderno -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Khristian Alarcón | Director Creativo & Fundador de KAMY | Branding, Marketing y ADS</title>
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,27 +18,238 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #111827;
             line-height: 1.5;
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Modo oscuro completo */
+        body.dark-mode {
+            background-color: #0a0a0a;
+            color: #e5e7eb;
+        }
+
+        body.dark-mode header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .nav-links a {
+            color: #d1d5db;
+        }
+
+        body.dark-mode .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #0a0a0f 0%, #0f172a 100%);
+        }
+
+        body.dark-mode .hero::before {
+            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+        }
+
+        body.dark-mode .hero-badge {
+            background: #1e293b;
+            color: #93c5fd;
+        }
+
+        body.dark-mode .hero-text p {
+            color: #9ca3af;
+        }
+
+        body.dark-mode .btn-outline {
+            border-color: #374151;
+            color: #e5e7eb;
+            background: transparent;
+        }
+
+        body.dark-mode .btn-outline:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        body.dark-mode .social-links {
+            color: #9ca3af;
+        }
+
+        body.dark-mode section {
+            border-bottom: 1px solid #1f2937;
+        }
+
+        body.dark-mode .info-card, body.dark-mode .exp-card, body.dark-mode .service-card, body.dark-mode .blog-card, body.dark-mode .case-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .info-card:hover, body.dark-mode .exp-card:hover, body.dark-mode .service-card:hover, body.dark-mode .blog-card:hover, body.dark-mode .case-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.4);
+        }
+
+        body.dark-mode .exp-company, body.dark-mode .service-icon {
+            color: #60a5fa;
+        }
+
+        body.dark-mode .skill-badge {
+            background: #1f2937;
+            color: #e5e7eb;
+        }
+
+        body.dark-mode .skill-badge:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        body.dark-mode .freelance-highlight {
+            background: linear-gradient(145deg, #1e1b0a, #2d2a0a);
+            border-left: 5px solid #fbbf24;
+        }
+
+        body.dark-mode .ref-card {
+            background: #0f172a;
+        }
+
+        body.dark-mode .section-title:after {
+            background: linear-gradient(90deg, #3b82f6, #a855f7);
+        }
+
+        body.dark-mode .logo h1 {
+            background: linear-gradient(135deg, #e5e7eb 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        body.dark-mode footer {
+            background: #050505;
+            color: #6b7280;
+        }
+
+        body.dark-mode .info-card i {
+            background: linear-gradient(135deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        body.dark-mode .stat-number {
+            color: #60a5fa;
+        }
+
+        .dark-mode-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+            color: #1f2937;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.05);
+            background: rgba(0,0,0,0.1);
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            color: #fbbf24;
+            background: rgba(255,255,255,0.1);
         }
 
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 0 32px;
         }
 
-        /* Header / Hero */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: #6b7280;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1f2937;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            border-radius: 2rem;
-            padding: 2.5rem 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .hero-content {
@@ -43,370 +257,563 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
         }
 
-        .hero-text h1 {
-            font-size: 2.8rem;
+        .hero-text {
+            flex: 1.5;
+        }
+
+        .hero-badge {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero-text h2 {
+            font-size: 4rem;
             font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
             letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
         }
 
         .hero-text .tagline {
             font-size: 1.3rem;
-            font-weight: 500;
-            color: #94a3b8;
-            margin-bottom: 1rem;
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        .hero-text .bio {
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #4b5563;
             max-width: 550px;
-            color: #cbd5e1;
-            margin-bottom: 1.8rem;
-            line-height: 1.5;
+            margin-bottom: 32px;
         }
 
-        .contact-info {
+        .contact-buttons {
             display: flex;
+            gap: 16px;
             flex-wrap: wrap;
-            gap: 1.2rem;
-            margin-top: 0.5rem;
+            margin-bottom: 28px;
         }
 
-        .contact-info a, .contact-info span {
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(4px);
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
+            gap: 10px;
             font-size: 0.9rem;
-            color: #e2e8f0;
-            text-decoration: none;
-            transition: all 0.2s;
         }
 
-        .contact-info a:hover {
-            background: #3b82f6;
+        .btn-primary {
+            background: #0f172a;
             color: white;
-            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
         }
 
-        .social-icons {
+        .btn-primary:hover {
+            background: #1e293b;
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-pdf {
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+            color: white;
+        }
+
+        .btn-pdf:hover {
+            transform: translateY(-3px);
+        }
+
+        .hero-avatar {
+            flex: 1;
+            text-align: center;
+        }
+
+        .avatar-premium {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(145deg, #2563eb, #7c3aed);
+            border-radius: 50%;
             display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icons a {
-            background: #334155;
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 30px 40px -20px rgba(37,99,235,0.4);
+        }
+
+        .avatar-premium i {
+            font-size: 5.5rem;
             color: white;
-            font-size: 1.2rem;
-            transition: 0.2s;
         }
 
-        .social-icons a:hover {
-            background: #3b82f6;
-            transform: scale(1.05);
-        }
-
-        /* Cards y grillas */
-        .section {
-            margin-bottom: 3rem;
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #f0f2f5;
         }
 
         .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            border-left: 5px solid #3b82f6;
-            padding-left: 1rem;
-            color: #0f172a;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 48px;
+            position: relative;
+            letter-spacing: -0.01em;
         }
 
-        .grid-2col {
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            border-radius: 4px;
+        }
+
+        .section-title-center {
+            text-align: center;
+        }
+        .section-title-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .grid-2col, .grid-3col, .grid-4col {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.8rem;
+            gap: 32px;
         }
+        .grid-2col { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        .grid-3col { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-4col { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
-        .card {
+        .info-card, .service-card, .blog-card {
             background: white;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            transition: all 0.25s ease;
-            border: 1px solid #e2e8f0;
+            border-radius: 28px;
+            padding: 32px;
+            transition: all 0.35s ease;
+            border: 1px solid #eef2ff;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
-            border-color: #cbd5e1;
+        .info-card:hover, .service-card:hover, .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: #c7d2fe;
         }
-
-        .card h3 {
+        .info-card i, .service-card i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+        .info-card h3, .service-card h3 {
             font-size: 1.4rem;
+            margin-bottom: 14px;
             font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: #1e293b;
         }
 
-        .card .meta {
-            font-size: 0.85rem;
-            color: #3b82f6;
+        .stat-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item {
+            flex: 1;
+            min-width: 150px;
+        }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #2563eb;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .exp-card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px 32px;
+            border: 1px solid #eef2ff;
+            transition: all 0.3s;
+        }
+        .exp-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .exp-company {
             font-weight: 600;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: #2563eb;
+            margin-bottom: 14px;
         }
 
-        .job-title {
-            font-weight: 700;
-            color: #0f172a;
-            margin: 0.5rem 0 0.3rem;
+        .brands-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+        .brand-tag {
+            background: linear-gradient(135deg, #2563eb10, #7c3aed10);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #2563eb;
         }
 
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
         .skill-badge {
-            display: inline-block;
-            background: #eef2ff;
-            color: #1e40af;
-            padding: 0.25rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin: 0.25rem 0.25rem 0 0;
-        }
-
-        .lang-item {
-            display: inline-block;
-            background: #f1f5f9;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            margin-right: 0.7rem;
-            margin-bottom: 0.5rem;
+            background: #f3f4f6;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
             font-weight: 500;
         }
-
-        .ref-item {
-            border-top: 1px solid #e2e8f0;
-            padding-top: 0.8rem;
-            margin-top: 0.8rem;
+        .skill-badge:hover {
+            background: #2563eb;
+            color: white;
         }
 
-        .ref-item:first-child {
-            border-top: none;
-            margin-top: 0;
-            padding-top: 0;
+        .services-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .service-item {
+            background: #f3f4f6;
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Referencias personales */
+        .ref-card {
+            background: #f9fafb;
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid #eef2ff;
+        }
+        .ref-card:hover {
+            transform: translateY(-5px);
+            border-color: #c7d2fe;
+        }
+        .ref-card i {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .ref-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .ref-phone {
+            color: #2563eb;
+            font-weight: 500;
+            margin-top: 12px;
+            font-size: 0.9rem;
         }
 
         footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 2rem;
-            color: #475569;
-            font-size: 0.85rem;
+            background: #0b1120;
+            color: #9ca3af;
+            padding: 60px 0 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .footer-col a {
+            color: #9ca3af;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
         }
 
-        @media (max-width: 680px) {
-            .hero-text h1 { font-size: 2rem; }
-            .container { padding: 1.2rem; }
-            .hero { padding: 1.8rem; }
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .hero-text h2 { font-size: 2.4rem; }
+            .nav { flex-direction: row; justify-content: space-between; }
+            .nav-links { gap: 16px; flex-wrap: wrap; }
+            .section-title { font-size: 1.8rem; }
+            .stat-number { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <!-- Sección hero / presentación -->
-    <div class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Khristian Alarcon</h1>
-                <div class="tagline">Dirección Creativa · Diseñador Gráfico Senior</div>
-                <div class="bio">
-                    Persona honesta, con ánimos de aprender cosas nuevas y una sed de conocimiento constante. 
-                    Siempre busco oportunidades para mejorar y crecer. Mi motivación me impulsa a enfrentar nuevos desafíos 
-                    sin temor a salir de mi zona de confort.
-                </div>
-                <div class="contact-info">
-                    <span><i class="fas fa-envelope"></i> khallarcon@gmail.com</span>
-                    <span><i class="fas fa-phone-alt"></i> 0412-4054151</span>
-                    <span><i class="fab fa-whatsapp"></i> 0412-4054151</span>
-                </div>
-                <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <span style="background:#1e293b;"><i class="fab fa-github"></i> Drackord</span>
-                </div>
+
+<header>
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <h1>KHRISTIAN ALARCÓN</h1>
+                <p>CREATIVE DIRECTOR · FOUNDER OF KAMY</p>
             </div>
-            <div style="text-align: center;">
-                <div style="background: #2d3a4e; border-radius: 50%; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                    <i class="fas fa-user-astronaut" style="font-size: 4rem; color:#94a3b8;"></i>
-                </div>
-                <div style="margin-top: 0.8rem; font-weight: 500;">KhrisCarvajal / Drackord</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#soy">Perfil</a></li>
+                    <li><a href="#agencia">KAMY</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#referencias">Referencias</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
             </div>
         </div>
     </div>
+</header>
 
-    <!-- EXPERIENCIA LABORAL destacada -->
-    <div class="section">
-        <div class="section-title"><i class="fas fa-briefcase" style="margin-right: 0.6rem;"></i> Trayectoria profesional</div>
-        <div class="grid-2col">
-            <!-- PDVSA -->
-            <div class="card">
-                <h3>P.D.V.S.A Occidente</h3>
-                <div class="meta">Pasante · 2017</div>
-                <p>Diseñador de maquetas, estructuras de cableado PLC, Centro de Operaciones Automatizados COA de PDVSA.</p>
-            </div>
-            <!-- METRO Valencia -->
-            <div class="card">
-                <h3>METRO de Valencia</h3>
-                <div class="meta">Pasante · Diseño gráfico & publicidad</div>
-                <p>Analista de sistema, diseño de página web, creación de imágenes, material POP, vallas publicitarias y carnets.</p>
-            </div>
-            <!-- INTERWEBSITE Guacara -->
-            <div class="card">
-                <h3>INTERWEBSITE Guacara</h3>
-                <div class="meta">Diseñador Gráfico</div>
-                <p>Creador de contenido para redes sociales, vallas publicitarias, material POP, fotografía y marketing digital.</p>
-            </div>
-            <!-- CHAVACAL - Diseñador Gráfico Senior -->
-            <div class="card">
-                <h3>CHAVACAL · Diseñador Gráfico Senior</h3>
-                <div class="meta">Desarrollo creativo & Branding</div>
-                <p>Diseños visuales de alta calidad para anuncios impresos, banners digitales, logotipos, folletos, empaques y material POP. 
-                Cumplimiento de identidad de marca para FANFARO, XENOL y MHW.</p>
-            </div>
-            <!-- CHAVACAL - Director creativo y Gerente de área -->
-            <div class="card">
-                <h3>CHAVACAL · Director Creativo & Gerente de área</h3>
-                <div class="meta">Liderazgo creativo</div>
-                <p>Desarrollo de visión creativa y estratégica, supervisión de equipo creativo, generación de conceptos originales, 
-                colaboración con otros departamentos para coherencia de estrategias.</p>
-            </div>
-            <!-- Everest & Groovy’s -->
-            <div class="card">
-                <h3>Everest & Groovy’s · Director Creativo</h3>
-                <div class="meta">Fundador Everest · Director Creativo Groovy’s</div>
-                <p>Identidad de marca, estrategia creativa y comunicación comercial para el negocio de helados (Everest). 
-                En Groovy’s: branding, campañas y contenido enfocado en conectar con el público y fortalecer el crecimiento de la marca.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- EDUCACIÓN + IDIOMAS en dos columnas -->
-    <div class="grid-2col" style="margin-bottom: 2rem;">
-        <div class="card">
-            <h3><i class="fas fa-graduation-cap"></i> Formación académica</h3>
-            <div style="margin-top: 1rem;">
-                <p><strong>🎓 IUTEPI</strong><br>Técnico Superior Analista de Sistemas (diseño web) · 2017-2020</p>
-                <p style="margin-top: 0.8rem;"><strong>📘 E.T.I Francisco González Guinan</strong><br>Técnico Medio en Electrónica · 2011-2016</p>
-            </div>
-        </div>
-        <div class="card">
-            <h3><i class="fas fa-language"></i> Idiomas</h3>
-            <div style="margin-top: 1rem;">
-                <span class="lang-item"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Español (nativo)</span>
-                <span class="lang-item"><i class="fas fa-check-circle"></i> Inglés</span>
-                <span class="lang-item"><i class="fas fa-check-circle"></i> Árabe</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- CURSOS Y CERTIFICACIONES -->
-    <div class="section">
-        <div class="section-title"><i class="fas fa-certificate"></i> Cursos especializados</div>
-        <div class="grid-2col">
-            <div class="card">
-                <h3>CreativeLive · Creatividad y pensamiento lateral</h3>
-                <p>Fomentar la generación de ideas innovadoras y desarrollar habilidades de pensamiento lateral.</p>
-                <div class="meta">www.creativelive.com</div>
-            </div>
-            <div class="card">
-                <h3>Khan Academy · Dirección de arte y diseño gráfico avanzado</h3>
-                <p>Técnicas avanzadas de diseño gráfico, dirección de arte, estética visual con software y herramientas de diseño, creación de diseños atractivos y efectivos.</p>
-                <div class="meta">www.khanacademy.org</div>
-            </div>
-            <div class="card">
-                <h3>Domestika · Gestión y liderazgo creativo</h3>
-                <p>Desarrollo de habilidades de gestión, liderazgo, resolución de problemas en el contexto creativo, toma de decisiones, comunicación efectiva y resolución de conflictos.</p>
-                <div class="meta">www.domestika.org</div>
-            </div>
-            <div class="card">
-                <h3>Adobe Creative Suite</h3>
-                <p>Herramientas profesionales: Photoshop, Illustrator e InDesign — dominio integral.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- HABILIDADES TÉCNICAS Y CONOCIMIENTOS (etiquetas) -->
-    <div class="section">
-        <div class="section-title"><i class="fas fa-code"></i> Conocimientos & habilidades</div>
-        <div class="card" style="padding: 1.8rem;">
-            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
-                <span class="skill-badge">Mercadeo y comunicación</span>
-                <span class="skill-badge">Diseño gráfico</span>
-                <span class="skill-badge">Adobe Creative Suite</span>
-                <span class="skill-badge">Sketch / Figma</span>
-                <span class="skill-badge">Publicidad y estrategias de marca</span>
-                <span class="skill-badge">Marketing y tendencias</span>
-                <span class="skill-badge">Medios y formatos publicitarios</span>
-                <span class="skill-badge">Creatividad</span>
-                <span class="skill-badge">Pensamiento crítico y analítico</span>
-                <span class="skill-badge">Liderazgo y gestión</span>
-                <span class="skill-badge">Adaptabilidad</span>
-                <span class="skill-badge">Atención al detalle</span>
-                <span class="skill-badge">Pensamiento conceptual</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- REFERENCIAS profesionales -->
-    <div class="section">
-        <div class="section-title"><i class="fas fa-address-card"></i> Referencias</div>
-        <div class="grid-2col">
-            <div class="card">
-                <h3>P.D.V.S.A Occidente</h3>
-                <div class="ref-item">
-                    <strong>Antonio Silva</strong><br>
-                    CI: 10.601.297 · Líder Planificación Control de Gestión<br>
-                    <i class="fas fa-phone"></i> 0412-7774004 · <i class="fab fa-whatsapp"></i> 0416-5630073
+<main>
+    <!-- Hero -->
+    <div class="hero" id="inicio">
+        <div class="container hero-content">
+            <div class="hero-text" data-aos="fade-right">
+                <span class="hero-badge"><i class="fas fa-crown"></i> Award-winning Creative Director</span>
+                <h2>Creatividad que<br>transforma marcas</h2>
+                <div class="tagline">Director Creativo & Fundador de KAMY Agency</div>
+                <p>+8 años liderando proyectos de branding, marketing digital y publicidad. He trabajado con marcas globales y he fundado KAMY, una agencia boutique especializada en contenido, ADS y estrategias de alto impacto.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:khallarcon@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> khallarcon@gmail.com</a>
+                    <a href="https://wa.me/584124054151" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> +58 412-4054151</a>
+                    <a href="#" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> Ver Portafolio PDF</a>
                 </div>
             </div>
-            <div class="card">
-                <h3>Mahle GmbH</h3>
-                <div class="ref-item">
-                    <strong>Antonio David Gellida Lavara</strong><br>
-                    Operador de equipos<br>
-                    <i class="fas fa-phone"></i> +34 626-461495<br>
-                    <i class="fas fa-globe"></i> adgellida.com/adgellida_web/
-                </div>
+            <div class="hero-avatar" data-aos="fade-left">
+                <div class="avatar-premium"><i class="fas fa-pen-fancy"></i></div>
+                <p style="margin-top: 24px;"><i class="fas fa-globe"></i> Español · Inglés · Árabe</p>
             </div>
         </div>
     </div>
 
-    <!-- FRASE O DATO EXTRA: valores + contacto -->
-    <div class="card" style="background: linear-gradient(110deg, #f1f5f9, white); text-align: center; margin-bottom: 1rem;">
-        <p style="font-size: 1rem; font-style: italic; color: #1e293b;">“Siempre estoy buscando oportunidades para mejorar y crecer cada vez más. Mi motivación me impulsa a enfrentar nuevos desafíos.”</p>
-        <div style="margin-top: 0.8rem;">
-            <i class="fas fa-map-marker-alt"></i> Disponible para freelance · Proyectos creativos · Dirección de arte
-        </div>
-    </div>
+    <div class="container">
+        <!-- Stats -->
+        <section>
+            <div class="stat-grid" data-aos="fade-up">
+                <div class="stat-item"><div class="stat-number">8+</div><div class="stat-label">Años de experiencia</div></div>
+                <div class="stat-item"><div class="stat-number">150+</div><div class="stat-label">Proyectos realizados</div></div>
+                <div class="stat-item"><div class="stat-number">12</div><div class="stat-label">Países alcanzados</div></div>
+                <div class="stat-item"><div class="stat-number">98%</div><div class="stat-label">Clientes satisfechos</div></div>
+            </div>
+        </section>
 
-    <footer>
-        <p>Khristian Alarcon — Dirección Creativa & Diseño Gráfico · Portfolio profesional basado en CV actualizado</p>
-        <p style="margin-top: 0.5rem;"><i class="far fa-envelope"></i> khallarcon@gmail.com · <i class="fab fa-instagram"></i> @Drackord · KhrisCarvajal</p>
-    </footer>
-</div>
+        <!-- Sobre mí -->
+        <section id="soy">
+            <h2 class="section-title">¿Quién soy?</h2>
+            <div class="grid-2col">
+                <div class="info-card" data-aos="fade-up"><i class="fas fa-fire"></i><h3>Pasión por crear</h3><p>Soy una persona honesta, con sed de conocimiento constante. No temo salir de mi zona de confort y siempre busco oportunidades para mejorar. Mi enfoque combina análisis técnico con sensibilidad artística.</p></div>
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-university"></i><h3>Formación de alto nivel</h3><p><strong>Técnico Superior Analista de Sistemas</strong> (IUTEPI) · Diseño Web<br><strong>Técnico Medio Electrónica</strong> · Cursos en CreativeLive, Khan Academy, Domestika.</p></div>
+            </div>
+        </section>
+
+        <!-- KAMY Agency -->
+        <section id="agencia">
+            <h2 class="section-title">✨ KAMY · Agencia Boutique</h2>
+            <div class="info-card" data-aos="zoom-in" style="background: linear-gradient(145deg, #fef9ff, #f0f4ff);">
+                <i class="fas fa-rocket"></i>
+                <h3>KAMY · Creatividad sin límites</h3>
+                <p>Fundé <strong>KAMY</strong> con la visión de ofrecer soluciones integrales de marketing y publicidad para marcas que buscan destacar. Somos una agencia pequeña pero ágil, especializada en:</p>
+                <div class="services-wrapper">
+                    <span class="service-item"><i class="fas fa-video"></i> Creación de Contenido</span>
+                    <span class="service-item"><i class="fas fa-chart-line"></i> Marketing Digital</span>
+                    <span class="service-item"><i class="fas fa-ad"></i> Google & Meta ADS</span>
+                    <span class="service-item"><i class="fas fa-film"></i> Edición de Video</span>
+                    <span class="service-item"><i class="fas fa-pen-fancy"></i> Diseño Gráfico</span>
+                    <span class="service-item"><i class="fas fa-chart-simple"></i> Social Media Management</span>
+                    <span class="service-item"><i class="fas fa-search"></i> SEO & Posicionamiento</span>
+                    <span class="service-item"><i class="fas fa-envelope"></i> Email Marketing</span>
+                </div>
+                <div style="margin-top: 24px;"><span class="skill-badge"><i class="fas fa-check-circle"></i> +30 proyectos gestionados</span> <span class="skill-badge"><i class="fas fa-chart-line"></i> +150% ROI promedio</span></div>
+            </div>
+        </section>
+
+        <!-- Servicios detallados -->
+        <section id="servicios">
+            <h2 class="section-title section-title-center">Nuestros Servicios</h2>
+            <div class="grid-3col">
+                <div class="service-card" data-aos="fade-up"><i class="fas fa-bullhorn"></i><h3>Publicidad & ADS</h3><p>Campañas optimizadas en Google, Meta, TikTok. Segmentación precisa y retorno garantizado.</p></div>
+                <div class="service-card" data-aos="fade-up"><i class="fas fa-paintbrush"></i><h3>Branding & Diseño</h3><p>Identidad visual, manuales de marca, packaging y diseño que conectan con tu audiencia.</p></div>
+                <div class="service-card" data-aos="fade-up"><i class="fas fa-video"></i><h3>Producción Audiovisual</h3><p>Edición profesional, motion graphics, contenido para redes y spots publicitarios.</p></div>
+                <div class="service-card" data-aos="fade-up"><i class="fas fa-chart-simple"></i><h3>Social Media</h3><p>Gestión de comunidades, calendarios de contenido, growth strategies y engagement real.</p></div>
+                <div class="service-card" data-aos="fade-up"><i class="fas fa-chart-line"></i><h3>Marketing Estratégico</h3><p>Consultoría, planes de marketing, análisis de mercado y ROI medible.</p></div>
+                <div class="service-card" data-aos="fade-up"><i class="fas fa-search"></i><h3>SEO & Posicionamiento</h3><p>Optimización para motores de búsqueda, aumento de tráfico orgánico y visibilidad digital.</p></div>
+            </div>
+        </section>
+
+        <!-- Experiencia profesional extendida -->
+        <section id="experiencia">
+            <h2 class="section-title">Trayectoria Profesional</h2>
+            <div class="timeline">
+                <div class="exp-card" data-aos="fade-up"><div class="exp-title">Fundador & Director Creativo</div><div class="exp-company">KAMY Agency · Actualidad</div><p>Liderazgo integral de la agencia: estrategia creativa, ejecución de campañas ADS, edición de contenido y marketing digital para clientes nacionales e internacionales.</p></div>
+                <div class="exp-card" data-aos="fade-up"><div class="exp-title">Director Creativo</div><div class="exp-company">Everest · Groovy’s</div><p>Branding, estrategia comercial y campañas de alto impacto para fortalecer el crecimiento de ambas marcas.</p></div>
+                <div class="exp-card" data-aos="fade-up"><div class="exp-title">Director Creativo y Gerente de Área</div><div class="exp-company">CHAVACAL · Fanfaro, Xenol, MHW</div><p>Desarrollo de conceptos creativos para medios impresos, digitales, empaques y material POP.</p></div>
+                <div class="exp-card" data-aos="fade-up"><div class="exp-title">Marcas con las que he trabajado</div><div class="exp-company">Proyectos de Branding & Consultoría</div><div class="brands-list"><span class="brand-tag">Wolver</span><span class="brand-tag">Yuko</span><span class="brand-tag">TruckFilter</span><span class="brand-tag">SupplyLiftCA</span><span class="brand-tag">Netools</span></div></div>
+            </div>
+        </section>
+
+        <!-- Metodología de trabajo -->
+        <section>
+            <h2 class="section-title section-title-center">Metodología de Trabajo</h2>
+            <div class="grid-4col">
+                <div class="info-card" data-aos="zoom-in"><i class="fas fa-search"></i><h3>01. Descubrimiento</h3><p>Análisis profundo de objetivos, audiencia y mercado.</p></div>
+                <div class="info-card" data-aos="zoom-in"><i class="fas fa-lightbulb"></i><h3>02. Estrategia</h3><p>Planificación creativa basada en datos y tendencias.</p></div>
+                <div class="info-card" data-aos="zoom-in"><i class="fas fa-pen-ruler"></i><h3>03. Creación</h3><p>Diseño, contenido, producción y desarrollo.</p></div>
+                <div class="info-card" data-aos="zoom-in"><i class="fas fa-chart-line"></i><h3>04. Optimización</h3><p>Métrica constante y ajustes para máximo rendimiento.</p></div>
+            </div>
+        </section>
+
+        <!-- Blog / Insights -->
+        <section>
+            <h2 class="section-title section-title-center">Insights & Artículos</h2>
+            <div class="grid-3col">
+                <div class="blog-card" data-aos="fade-up"><i class="fas fa-chart-simple"></i><h3>Cómo optimizar campañas ADS en 2025</h3><p>Estrategias avanzadas para reducir CPC y aumentar conversiones.</p><span class="skill-badge" style="margin-top: 12px;">Leer más →</span></div>
+                <div class="blog-card" data-aos="fade-up"><i class="fas fa-palette"></i><h3>Branding emocional: claves para conectar</h3><p>Construye relaciones duraderas con tu audiencia a través del diseño.</p><span class="skill-badge" style="margin-top: 12px;">Leer más →</span></div>
+                <div class="blog-card" data-aos="fade-up"><i class="fas fa-tiktok"></i><h3>Contenido viral: tendencias 2025</h3><p>Lo que funciona hoy en redes sociales para maximizar el alcance orgánico.</p><span class="skill-badge" style="margin-top: 12px;">Leer más →</span></div>
+            </div>
+        </section>
+
+        <!-- Competencias -->
+        <section id="skills">
+            <h2 class="section-title">Competencias Digitales</h2>
+            <div class="grid-2col">
+                <div class="info-card"><i class="fas fa-laptop-code"></i><h3>Diseño & Motion</h3><div class="skills-list"><span class="skill-badge">Photoshop</span><span class="skill-badge">Illustrator</span><span class="skill-badge">After Effects</span><span class="skill-badge">Premiere Pro</span><span class="skill-badge">Blender</span><span class="skill-badge">Figma</span></div></div>
+                <div class="info-card"><i class="fas fa-chart-line"></i><h3>Estrategia & Gestión</h3><div class="skills-list"><span class="skill-badge">Meta ADS</span><span class="skill-badge">Google ADS</span><span class="skill-badge">SEO/SEM</span><span class="skill-badge">Trello/Asana</span><span class="skill-badge">Brand Strategy</span><span class="skill-badge">Analytics</span></div></div>
+            </div>
+        </section>
+
+        <!-- Referencias profesionales (con números y cargos como estaba originalmente) -->
+        <section id="referencias">
+            <h2 class="section-title">Referencias profesionales</h2>
+            <div class="grid-2col">
+                <div class="ref-card" data-aos="fade-right">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Antonio Silva</h3>
+                    <p>Líder Planificación Control de Gestión, PDVSA Occidente EyP</p>
+                    <div class="ref-phone">📞 0412-7774004 / 0416-5630073</div>
+                </div>
+                <div class="ref-card" data-aos="fade-left">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Antonio David Gellida Lavara</h3>
+                    <p>Operador de equipos, Mahle GmbH · España</p>
+                    <div class="ref-phone">📞 +34 626-461495</div>
+                    <p style="margin-top: 8px; font-size: 0.85rem;">🔗 adgellida.com</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto (solo información directa, sin formulario) -->
+        <section id="contacto">
+            <h2 class="section-title">¿Creamos algo juntos?</h2>
+            <div class="info-card" style="text-align: center; background: linear-gradient(145deg, #fef9ff, #ffffff);" data-aos="zoom-in">
+                <i class="fas fa-hand-peace" style="font-size: 3rem;"></i>
+                <p style="margin: 20px 0; font-size: 1.1rem;">¿Buscas un director creativo con visión global o una agencia que impulse tu marca?<br>En <strong>KAMY</strong> tenemos la solución. Hablemos de tu próximo proyecto.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+                    <a href="mailto:khallarcon@gmail.com" class="btn btn-primary"><i class="fas fa-envelope-open-text"></i> khallarcon@gmail.com</a>
+                    <a href="https://wa.me/584124054151?text=Hola%20Khristian,%20me%20interesa%20conocer%20más%20sobre%20KAMY%20y%20tus%20servicios." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> +58 412-4054151</a>
+                    <a href="#" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> Portafolio PDF</a>
+                </div>
+                <div class="social-links" style="display: flex; justify-content: center; gap: 28px; color: #6b7280;">
+                    <span><i class="fab fa-whatsapp"></i> +58 412-4054151</span>
+                    <span><i class="fab fa-github"></i> Drackord</span>
+                    <span><i class="fab fa-linkedin"></i> KhrisCarvajal</span>
+                    <span><i class="fab fa-instagram"></i> @Drackord</span>
+                    <span><i class="fab fa-behance"></i> Drackord</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>KAMY Agency</h4><p>Creatividad sin límites · Marketing que transforma</p></div>
+            <div class="footer-col"><h4>Contacto</h4><a href="mailto:khallarcon@gmail.com">khallarcon@gmail.com</a><a href="https://wa.me/584124054151">+58 412-4054151</a></div>
+            <div class="footer-col"><h4>Legal</h4><a href="#">Política de privacidad</a><a href="#">Términos y condiciones</a></div>
+        </div>
+        <p style="text-align: center;">© 2025 Khristian Alarcón — KAMY Agency. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, offset: 100 });
+    const toggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const icon = toggle.querySelector('i');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+    toggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    });
+</script>
 </body>
 </html>
