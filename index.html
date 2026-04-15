@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts optimizado -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- AOS (lo mantenemos, pero GSAP será principal) -->
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- GSAP y ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -59,12 +59,14 @@
         body.dark-mode .hero-text p { color: #9ca3af; }
         body.dark-mode section { border-bottom: 1px solid #1f2937; }
         body.dark-mode .info-card, body.dark-mode .exp-card, body.dark-mode .service-card, 
-        body.dark-mode .blog-card, body.dark-mode .testimonial-card {
+        body.dark-mode .blog-card, body.dark-mode .testimonial-card, body.dark-mode .method-card,
+        body.dark-mode .tool-card {
             background: #111827;
             border: 1px solid #1f2937;
         }
         body.dark-mode .info-card:hover, body.dark-mode .exp-card:hover, 
-        body.dark-mode .service-card:hover, body.dark-mode .blog-card:hover {
+        body.dark-mode .service-card:hover, body.dark-mode .blog-card:hover, 
+        body.dark-mode .method-card:hover, body.dark-mode .tool-card:hover {
             border-color: #3b82f6;
         }
         body.dark-mode .exp-company, body.dark-mode .service-icon { color: #60a5fa; }
@@ -303,29 +305,43 @@
         .section-title-center { text-align: center; }
         .section-title-center:after { left: 50%; transform: translateX(-50%); }
 
-        .grid-2col, .grid-3col, .grid-4col { display: grid; gap: 32px; }
+        .grid-2col, .grid-3col, .grid-4col, .grid-5col { display: grid; gap: 24px; }
         .grid-2col { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
         .grid-3col { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         .grid-4col { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        .grid-5col { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
 
-        .info-card, .service-card, .blog-card, .exp-card {
+        .info-card, .service-card, .blog-card, .exp-card, .method-card, .tool-card {
             background: white;
             border-radius: 28px;
             padding: 32px;
             transition: all 0.35s ease;
             border: 1px solid #eef2ff;
         }
-        .info-card:hover, .service-card:hover, .blog-card:hover, .exp-card:hover {
+        .info-card:hover, .service-card:hover, .blog-card:hover, .exp-card:hover, 
+        .method-card:hover, .tool-card:hover {
             transform: translateY(-8px);
             border-color: #c7d2fe;
         }
-        .info-card i, .service-card i {
-            font-size: 2.5rem;
+        .info-card i, .service-card i, .method-card i, .tool-card i {
+            font-size: 2.2rem;
             background: linear-gradient(135deg, #2563eb, #7c3aed);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+        }
+        .tool-card {
+            text-align: center;
+            padding: 24px 16px;
+        }
+        .tool-card i {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+        }
+        .tool-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         .stat-grid {
@@ -550,6 +566,7 @@
                     <li><a href="#soy">Perfil</a></li>
                     <li><a href="#agencia">KAMY</a></li>
                     <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#metodologia">Metodología</a></li>
                     <li><a href="#experiencia">Experiencia</a></li>
                     <li><a href="#testimonios">Testimonios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
@@ -652,6 +669,58 @@
             </div>
         </section>
 
+        <!-- NUEVA SECCIÓN: HERRAMIENTAS Y SOFTWARE -->
+        <section id="herramientas">
+            <h2 class="section-title section-title-center">Herramientas & Software</h2>
+            <div class="grid-5col">
+                <div class="tool-card">
+                    <i class="fab fa-figma"></i>
+                    <h4>Figma</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">UI/UX</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>Photoshop</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">Retoque</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-pen-nib"></i>
+                    <h4>Illustrator</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">Vector</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-video"></i>
+                    <h4>After Effects</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">Motion</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-film"></i>
+                    <h4>Premiere Pro</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">Edición</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-camera"></i>
+                    <h4>Lightroom</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">Fotografía</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-cube"></i>
+                    <h4>Blender</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">3D</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-scroll"></i>
+                    <h4>Filmora</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">Edición rápida</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-camera-retro"></i>
+                    <h4>Fotografía</h4>
+                    <p style="font-size: 0.8rem; color: #6b7280;">DSLR</p>
+                </div>
+            </div>
+        </section>
+
         <section id="servicios">
             <h2 class="section-title section-title-center">Nuestros Servicios</h2>
             <div class="grid-3col">
@@ -661,6 +730,32 @@
                 <div class="service-card"><i class="fas fa-chart-simple"></i><h3>Social Media</h3><p>Gestión de comunidades, estrategias de crecimiento.</p></div>
                 <div class="service-card"><i class="fas fa-chart-line"></i><h3>Marketing Estratégico</h3><p>Consultoría, planes de marketing, ROI medible.</p></div>
                 <div class="service-card"><i class="fas fa-search"></i><h3>SEO & Posicionamiento</h3><p>Optimización para motores de búsqueda.</p></div>
+            </div>
+        </section>
+
+        <section id="metodologia">
+            <h2 class="section-title section-title-center">Metodología de Trabajo</h2>
+            <div class="grid-4col">
+                <div class="method-card">
+                    <i class="fas fa-search"></i>
+                    <h3>01. Descubrimiento</h3>
+                    <p>Análisis profundo de objetivos, audiencia y mercado.</p>
+                </div>
+                <div class="method-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>02. Estrategia</h3>
+                    <p>Planificación creativa basada en datos y tendencias.</p>
+                </div>
+                <div class="method-card">
+                    <i class="fas fa-pen-ruler"></i>
+                    <h3>03. Creación</h3>
+                    <p>Diseño, contenido, producción y desarrollo.</p>
+                </div>
+                <div class="method-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>04. Optimización</h3>
+                    <p>Métrica constante y ajustes para máximo rendimiento.</p>
+                </div>
             </div>
         </section>
 
@@ -922,7 +1017,7 @@
 
     // ========== GSAP SCROLLTRIGGER ==========
     gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('.info-card, .service-card, .exp-card, .ref-card').forEach(el => {
+    gsap.utils.toArray('.info-card, .service-card, .exp-card, .ref-card, .method-card, .tool-card').forEach(el => {
         gsap.from(el, {
             scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
             opacity: 0, y: 40, duration: 0.8, ease: 'power2.out'
@@ -964,7 +1059,6 @@
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Mostrar estado "enviando..."
         statusDiv.textContent = 'Enviando mensaje...';
         statusDiv.className = 'form-status';
         statusDiv.style.display = 'block';
@@ -984,7 +1078,7 @@
             if (response.ok) {
                 statusDiv.textContent = '✅ ¡Mensaje enviado! Te responderé pronto.';
                 statusDiv.className = 'form-status success';
-                form.reset(); // Limpiar formulario
+                form.reset();
             } else {
                 throw new Error('Error en el envío');
             }
@@ -993,7 +1087,6 @@
             statusDiv.className = 'form-status error';
         }
         
-        // Ocultar el mensaje después de 6 segundos (opcional)
         setTimeout(() => {
             statusDiv.style.display = 'none';
         }, 6000);
